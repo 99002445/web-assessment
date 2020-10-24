@@ -1,0 +1,64 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>FORMS</title>
+    <script src="./Scripts/Common.js"></script>
+    <script src="./Scripts/Classes.js"></script>
+    <script>
+        function func(){
+            alert('User Successfully Registered');
+            let name = $("username").value;
+            let dob = $("dob").value;
+            let gender = $("gender").value;
+            let transport = $("trans").value;
+            let userObj = new user(name, dob, gender, transport);
+            let text = ("Name:"+ name +"DOB:" +dob + "Gender:"+ gender+ "Mode of Transport:"+ trans);
+            print(text);
+            
+        }
+    </script>
+    
+    
+    <style>
+        body{
+            background-color: bisque;
+        }
+        h1{
+            background-color:#373a40;
+           
+            color: white;
+            text-align: center;
+            /*padding: 30;*/
+            margin: 0px;  
+        }
+        a{
+            width: 10px;
+            color: white;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>FORM</h1>
+    
+        <form align="center">
+            <p>Enter your name: <input type="text" placeholder="Enter the Name" id="username"></p>    
+            <p>Enter your DOB: <input type="date" id="dob" name="dob">
+            <p>
+                GENDER <input type="radio" id="status" value="male" name="status1">Male<input type="radio" id="status" value="Female" name="status2">Female
+            </p>        
+            <p>Mode of Transport<select id="trans">
+                <option>Car</option>
+                <option>Bike</option>
+            </select></p>
+            <button type="button" onclick=func()>SUBMIT</button>
+        </form>
+  
+    <br>   
+    <div>
+        <p> Details Entered :</p>
+        <p id="printHere"></p>
+    </div>
+</body>
+</html>
